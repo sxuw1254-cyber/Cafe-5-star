@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#241710">
+<title>Cafe 5 Star | مجتمع القهوة</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&display=swap');
+:root{--ink:#241710;--coffee:#5c3928;--cream:#f7f1e9;--paper:#fffdf9;--tan:#c9a987;--muted:#88796e;--line:#eadfd2;--gold:#d9b77e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'Alexandria',Tahoma,sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}.topbar{background:#241710;color:#fff;padding:14px 5vw;display:flex;justify-content:space-between;align-items:center;gap:15px;position:sticky;top:0;z-index:10}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.3px}.brand-mark{width:42px;height:42px;border:1px solid #b99670;border-radius:50%;display:grid;place-items:center;color:#e8cfad;font-size:21px}.brand small{display:block;font-size:9px;color:#cbb49d;letter-spacing:2px;font-weight:400}.nav{display:flex;gap:22px;align-items:center}.nav a{color:#eadfd2;text-decoration:none;font-size:12px}.nav a:hover{color:#fff}.admin-link{border:1px solid #8c7058;border-radius:30px;padding:9px 15px;color:#fff;background:transparent;font-size:11px}
+.hero{padding:72px 6vw 60px;background:radial-gradient(ellipse at 75% 20%,#79533c 0,#3a261b 38%,#241710 78%);color:white;position:relative;overflow:hidden}.hero:after{content:"✦";position:absolute;left:9%;top:25px;color:#b28d68;font-size:120px;opacity:.14}.hero-inner{max-width:1120px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}.eyebrow{color:#d8bb98;font-size:11px;letter-spacing:2px}.hero h1{font-size:clamp(35px,5vw,60px);line-height:1.35;margin:13px 0}.hero h1 span{color:#d9b77e}.hero p{color:#dfd0c2;line-height:2;font-size:14px;max-width:570px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{border:0;border-radius:30px;padding:13px 23px;font-weight:600;font-size:12px}.btn-gold{background:#d9b77e;color:#241710}.btn-outline{background:transparent;border:1px solid #9c8065;color:white}.hero-art{height:300px;border:1px solid #86684e;border-radius:48% 48% 18px 18px;background:linear-gradient(145deg,#c4a17b,#704b35 52%,#2b1b13);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 25px 60px #100a0670}.cup{width:180px;height:145px;border-radius:12px 12px 60px 60px;background:linear-gradient(110deg,#f8eee0,#d8c1a4);position:relative;box-shadow:inset -18px -5px 22px #8a6443,0 24px 30px #20120c80;transform:rotate(-7deg)}.cup:before{content:"";position:absolute;right:-55px;top:25px;width:70px;height:70px;border:15px solid #e9d8c4;border-radius:50%}.cup:after{content:"5★";position:absolute;inset:0;display:grid;place-items:center;color:#6b422b;font-weight:800;font-size:33px}.steam{position:absolute;top:38px;font-size:56px;color:#f5e7d5;opacity:.7}
+.section{max-width:1120px;margin:auto;padding:54px 5vw}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:24px}.section-head h2{font-size:25px;margin:5px 0}.section-head p{color:var(--muted);font-size:12px;margin:0}.tag{color:#9a7957;font-size:10px;letter-spacing:1.5px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:-25px;position:relative}.stat{background:var(--paper);padding:18px;border:1px solid var(--line);border-radius:14px;text-align:center;box-shadow:0 10px 25px #3c24100b}.stat strong{font-size:25px;display:block;color:var(--coffee)}.stat span{font-size:10px;color:var(--muted)}
+.upload-panel{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:25px;display:grid;grid-template-columns:1fr 1fr;gap:22px}.upload-panel h3{margin:0 0 8px;font-size:18px}.upload-panel p{font-size:11px;color:var(--muted);line-height:1.9}.field{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fffaf4;outline:none;margin:6px 0 10px;font-size:12px}.field:focus{border-color:#b38d66}.upload-box{border:1px dashed #c5a987;border-radius:14px;min-height:150px;display:grid;place-items:center;text-align:center;color:#967b61;padding:15px;background:#fcf8f2;cursor:pointer}.upload-box img{max-width:100%;max-height:170px;border-radius:10px}.upload-box input{display:none}.hint{font-size:10px;color:#9b8a7b}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.photo-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 20px #3a24100a}.photo{height:220px;background:linear-gradient(135deg,#c8a98a,#6b4935);display:grid;place-items:center;color:#fff;font-size:42px;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover}.photo-meta{padding:14px}.photo-meta strong{font-size:12px}.photo-meta p{font-size:10px;color:var(--muted);margin:6px 0 12px}.card-bottom{display:flex;justify-content:space-between;align-items:center}.vote{border:1px solid #d8c4ae;background:#fff9f0;border-radius:30px;padding:8px 13px;color:#704b34;font-size:11px}.vote.voted{background:#5c3928;color:white;border-color:#5c3928}.votes{font-size:10px;color:#8b7969}.empty{grid-column:1/-1;text-align:center;padding:45px 15px;border:1px dashed #d8c7b6;border-radius:15px;color:#8b7969;font-size:12px}
+.winner-section{background:#efe5d9}.winner-wrap{max-width:1120px;margin:auto;padding:48px 5vw}.winner-card{display:flex;align-items:center;gap:20px;background:#2d1e16;color:white;padding:25px;border-radius:18px}.winner-icon{font-size:38px}.winner-card h3{margin:0 0 7px}.winner-card p{margin:0;color:#d5c2ad;font-size:11px;line-height:1.8}
+footer{background:#241710;color:#c9b8a6;text-align:center;padding:25px;font-size:10px}.modal-back{position:fixed;inset:0;background:#120b08b8;display:none;place-items:center;z-index:30;padding:16px}.modal{width:min(760px,100%);max-height:90vh;overflow:auto;background:var(--paper);border-radius:18px;padding:22px}.modal-top{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:#f0e7dc;border-radius:50%;width:34px;height:34px}.tabs{display:flex;gap:8px;margin:15px 0}.tab{border:1px solid var(--line);background:#fff;border-radius:25px;padding:8px 15px;font-size:11px}.tab.active{background:#5c3928;color:white}.admin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}.admin-stat{background:#f5eee5;padding:14px;border-radius:12px}.admin-stat b{display:block;font-size:22px}.admin-list{display:grid;gap:9px}.admin-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);border-radius:11px;font-size:11px}.admin-row button{border:0;border-radius:20px;padding:7px 10px;font-size:10px}.approve{background:#e5f0e6;color:#315c39}.delete{background:#f7e5e2;color:#8b382d}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#241710;color:white;padding:12px 18px;border-radius:30px;font-size:11px;display:none;z-index:50;box-shadow:0 5px 20px #0003}
+@media(max-width:760px){.nav a{display:none}.hero{padding:48px 6vw}.hero-inner{grid-template-columns:1fr}.hero-art{height:220px;max-width:360px;width:100%;margin:auto}.stats{margin-top:-10px}.upload-panel{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr);gap:10px}.photo{height:160px}.section{padding:40px 5vw}.section-head h2{font-size:21px}.admin-grid{grid-template-columns:1fr 1fr}}@media(max-width:430px){.gallery{grid-template-columns:1fr 1fr}.photo{height:135px}.photo-meta{padding:10px}.hero h1{font-size:35px}.stats{gap:7px}.stat{padding:13px 5px}.stat strong{font-size:21px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="brand-mark">5★</div><div>CAFE 5 STAR<small>YOUR COFFEE COMMUNITY</small></div></div>
+  <nav class="nav"><a href="#gallery">المعرض</a><a href="#share">شارك صورتك</a><a href="#winner">الفائز الأسبوعي</a></nav>
+  <button class="admin-link" onclick="openAdmin()">لوحة الإدارة ↗</button>
+</header>
+<section class="hero">
+ <div class="hero-inner">
+  <div><div class="eyebrow">A LITTLE MOMENT. A BIG STORY.</div><h1>قهوتك لها<br><span>حكاية تستاهل تنشاف.</span></h1>
+   <p>شاركنا لحظتك مع Cafe 5 Star، صوّر طلبك، واجمع تصويتات القهوة من مجتمعنا. كل أسبوع نختار أفضل 10 صور ونحتفل بالفائز.</p>
+   <div class="hero-actions"><button class="btn btn-gold" onclick="document.querySelector('#share').scrollIntoView({behavior:'smooth'})">شارك لحظتك ☕</button><button class="btn btn-outline" onclick="document.querySelector('#gallery').scrollIntoView({behavior:'smooth'})">شوف الصور</button></div>
+  </div>
+  <div class="hero-art"><div class="steam">〰</div><div class="cup"></div></div>
+ </div>
+</section>
+<section class="section" style="padding-top:28px;padding-bottom:15px">
+ <div class="stats"><div class="stat"><strong id="photoCount">0</strong><span>صورة في المجتمع</span></div><div class="stat"><strong id="voteCount">0</strong><span>تصويت بالقهوة</span></div><div class="stat"><strong>10</strong><span>صور في قائمة الأسبوع</span></div></div>
+</section>
+<section class="section" id="share">
+ <div class="section-head"><div><div class="tag">BE PART OF THE STORY</div><h2>شاركنا صورة طلبك</h2><p>بدون تسجيل حساب — ارفع الصورة واكتب اسمك المستعار.</p></div></div>
+ <div class="upload-panel">
+  <div><h3>لحظتك تستاهل المشاركة 🤎</h3><p>خلّنا نشوف مشروبك المفضل أو طلبك من Cafe 5 Star. الصور الجديدة تظهر بعد موافقة الإدارة.</p>
+   <input id="nickname" class="field" maxlength="24" placeholder="اسمك المستعار (مثال: عاشق القهوة)">
+   <textarea id="caption" class="field" rows="3" maxlength="120" placeholder="اكتب تعليق بسيط عن طلبك (اختياري)"></textarea>
+   <button class="btn btn-gold" style="width:100%" onclick="submitPhoto()">إرسال المشاركة</button>
+   <div class="hint" style="margin-top:9px">بإرسال الصورة، تؤكد أنها مناسبة للنشر ولا تحتوي على معلومات شخصية.</div>
+  </div>
+  <label class="upload-box" for="photoFile" id="uploadBox"><div><div style="font-size:35px">＋</div><b>اضغط لاختيار الصورة</b><div class="hint">JPG أو PNG — يفضّل صورة واضحة</div></div><input id="photoFile" type="file" accept="image/*" onchange="previewPhoto(event)"></label>
+ </div>
+</section>
+<section class="section" id="gallery" style="padding-top:20px">
+ <div class="section-head"><div><div class="tag">COMMUNITY GALLERY</div><h2>معرض لحظات القهوة</h2><p>صوّت للصورة اللي تستحق ☕</p></div><div class="hint" id="weekLabel">تحدي هذا الأسبوع</div></div>
+ <div class="gallery" id="galleryGrid"></div>
+</section>
+<section class="winner-section" id="winner"><div class="winner-wrap">
+ <div class="section-head"><div><div class="tag">WEEKLY SPOTLIGHT</div><h2>أفضل 10 صور هذا الأسبوع</h2><p>ترتيب المشاركات حسب عدد تصويتات القهوة.</p></div></div>
+ <div class="winner-card"><div class="winner-icon">🏆</div><div><h3>نجم الأسبوع القادم ممكن تكون أنت!</h3><p>شارك صورتك واجمع تصويتات المجتمع. يتم إعلان الفائز بعد نهاية كل أسبوع من خلال حساب Cafe 5 Star.</p></div></div>
+ <div id="topTen" class="gallery" style="margin-top:18px"></div>
+</div></section>
+<footer>© <span id="year"></span> CAFE 5 STAR · صُنعت القهوة لتُشارك ☕</footer>
+
+<div class="modal-back" id="adminModal"><div class="modal">
+ <div class="modal-top"><div><div class="tag">CAFE 5 STAR</div><h2 style="margin:5px 0">لوحة تحكم الإدارة</h2></div><button class="close" onclick="closeAdmin()">✕</button></div>
+ <div id="adminLogin"><p style="font-size:12px;color:#88796e">أدخل رمز الإدارة للوصول إلى المشاركات.</p><input id="adminPin" class="field" type="password" placeholder="رمز الإدارة"><button class="btn btn-gold" onclick="loginAdmin()">دخول</button><p class="hint">رمز العرض التجريبي: 5555 — غيّره قبل النشر.</p></div>
+ <div id="adminPanel" style="display:none"><div class="admin-grid"><div class="admin-stat"><span>بانتظار الموافقة</span><b id="pendingCount">0</b></div><div class="admin-stat"><span>المشاركات المنشورة</span><b id="approvedCount">0</b></div><div class="admin-stat"><span>إجمالي التصويتات</span><b id="adminVotes">0</b></div></div>
+ <div class="tabs"><button class="tab active" onclick="showAdminTab('pending',this)">بانتظار الموافقة</button><button class="tab" onclick="showAdminTab('approved',this)">المنشورة</button></div><div class="admin-list" id="adminList"></div>
+ <button class="btn btn-outline" style="color:#5c3928;border-color:#c9b69f;margin-top:16px" onclick="exportData()">تصدير بيانات المشاركات CSV</button>
+ </div>
+</div></div>
+<div class="toast" id="toast"></div>
+<script>
+const KEY='cafe5star_demo_v1', VOTES='cafe5star_votes_v1';
+let photos=JSON.parse(localStorage.getItem(KEY)||'[]'), myVotes=JSON.parse(localStorage.getItem(VOTES)||'[]'), selectedFile='';
+let adminTab='pending';
+const sample=[
+ {id:'sample1',name:'قهوة الصباح',caption:'بداية يوم هادئة مع قهوتي المفضلة ☕',votes:18,status:'approved',sample:true,art:'☕'},
+ {id:'sample2',name:'لحظة رايقة',caption:'أحلى وقت هو وقت القهوة',votes:13,status:'approved',sample:true,art:'🥤'},
+ {id:'sample3',name:'مزاج المساء',caption:'مساء الخير من Cafe 5 Star 🤎',votes:9,status:'approved',sample:true,art:'🍰'}
+];
+function allPhotos(){return [...sample,...photos]}
+function save(){localStorage.setItem(KEY,JSON.stringify(photos));localStorage.setItem(VOTES,JSON.stringify(myVotes))}
+function toast(msg){let t=document.getElementById('toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',2600)}
+function previewPhoto(e){const f=e.target.files[0];if(!f)return;if(f.size>5*1024*1024){toast('حجم الصورة أكبر من 5MB');e.target.value='';return}const r=new FileReader();r.onload=()=>{selectedFile=r.result;document.getElementById('uploadBox').innerHTML=`<img src="${selectedFile}" alt="معاينة الصورة"><input id="photoFile" type="file" accept="image/*" onchange="previewPhoto(event)" style="display:none">`;};r.readAsDataURL(f)}
+function submitPhoto(){const name=document.getElementById('nickname').value.trim();if(!name){toast('اكتب اسمك المستعار أولاً');return}if(!selectedFile){toast('اختَر صورة قبل الإرسال');return}photos.unshift({id:'p'+Date.now(),name,caption:document.getElementById('caption').value.trim(),image:selectedFile,votes:0,status:'pending',created:new Date().toISOString()});save();document.getElementById('nickname').value='';document.getElementById('caption').value='';selectedFile='';document.getElementById('uploadBox').innerHTML='<div><div style="font-size:35px">＋</div><b>اضغط لاختيار الصورة</b><div class="hint">JPG أو PNG — يفضّل صورة واضحة</div></div><input id="photoFile" type="file" accept="image/*" onchange="previewPhoto(event)">';render();toast('وصلتنا مشاركتك! ستظهر بعد موافقة الإدارة 🤎')}
+function vote(id){if(myVotes.includes(id)){toast('صوّتّ لهذه الصورة من قبل');return}let p=photos.find(x=>x.id===id);if(!p){toast('هذه صورة تجريبية للعرض');return}p.votes=(p.votes||0)+1;myVotes.push(id);save();render();toast('تم إضافة صوت القهوة ☕')}
+function card(p,rank){const voted=myVotes.includes(p.id);return `<article class="photo-card"><div class="photo">${p.image?`<img src="${p.image}" alt="مشاركة ${esc(p.name)}">`:p.art||'☕'}</div><div class="photo-meta"><strong>${rank?`#${rank} · `:''}${esc(p.name)}</strong><p>${esc(p.caption||'لحظة قهوة جميلة')}</p><div class="card-bottom"><button class="vote ${voted?'voted':''}" onclick="vote('${p.id}')" ${p.sample?'disabled title="صورة توضيحية"':''}>${voted?'✓ صوّتّ':'☕ صوّت'}</button><span class="votes">${p.votes||0} تصويت</span></div></div></article>`}
+function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){const approved=allPhotos().filter(p=>p.status==='approved');document.getElementById('galleryGrid').innerHTML=approved.length?approved.map(p=>card(p)).join(''):'<div class="empty">ما فيه صور منشورة للحين — شارك أول صورة 🤎</div>';const top=[...approved].sort((a,b)=>(b.votes||0)-(a.votes||0)).slice(0,10);document.getElementById('topTen').innerHTML=top.length?top.map((p,i)=>card(p,i+1)).join(''):'<div class="empty">قائمة العشرة الأوائل بتظهر هنا بعد المشاركات.</div>';document.getElementById('photoCount').textContent=approved.length;document.getElementById('voteCount').textContent=approved.reduce((n,p)=>n+(p.votes||0),0);if(document.getElementById('adminPanel').style.display!=='none')renderAdmin()}
+function openAdmin(){document.getElementById('adminModal').style.display='grid'}function closeAdmin(){document.getElementById('adminModal').style.display='none'}
+function loginAdmin(){if(document.getElementById('adminPin').value!=='5555'){toast('رمز الإدارة غير صحيح');return}document.getElementById('adminLogin').style.display='none';document.getElementById('adminPanel').style.display='block';renderAdmin()}
+function showAdminTab(tab,el){adminTab=tab;document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));el.classList.add('active');renderAdmin()}
+function renderAdmin(){let pending=photos.filter(p=>p.status==='pending'),approved=photos.filter(p=>p.status==='approved');document.getElementById('pendingCount').textContent=pending.length;document.getElementById('approvedCount').textContent=approved.length;document.getElementById('adminVotes').textContent=allPhotos().reduce((n,p)=>n+(p.votes||0),0);let list=photos.filter(p=>p.status===adminTab);document.getElementById('adminList').innerHTML=list.length?list.map(p=>`<div class="admin-row"><div><b>${esc(p.name)}</b><div class="hint">${esc(p.caption||'بدون تعليق')} · ${p.votes||0} تصويت</div></div><div style="display:flex;gap:5px">${adminTab==='pending'?`<button class="approve" onclick="moderate('${p.id}','approved')">موافقة</button>`:''}<button class="delete" onclick="removePhoto('${p.id}')">حذف</button></div></div>`).join(''):'<div class="empty">ما فيه مشاركات في هذا القسم.</div>'}
+function moderate(id,status){let p=photos.find(x=>x.id===id);if(p){p.status=status;save();render();toast('تم نشر الصورة')}}
+function removePhoto(id){if(!confirm('متأكد من حذف المشاركة؟'))return;photos=photos.filter(x=>x.id!==id);myVotes=myVotes.filter(x=>x!==id);save();render();toast('تم حذف المشاركة')}
+function exportData(){let rows=[['الاسم','التعليق','التصويتات','الحالة'],...photos.map(p=>[p.name,p.caption,p.votes,p.status])];let csv='\uFEFF'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\n');let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='cafe5star-participations.csv';a.click();URL.revokeObjectURL(a.href)}
+document.getElementById('year').textContent=new Date().getFullYear();render();
+</script>
+</body></html>
